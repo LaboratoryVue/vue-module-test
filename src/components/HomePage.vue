@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="$style.wrapper">
     <div :class="$style.title">
       title
     </div>
@@ -16,6 +16,9 @@ export default {
 </script>
 
 <style lang="scss" module>
+.wrapper {
+  margin: 2rem 0;
+}
 .title {
   text-transform: capitalize;
   font-weight: 700;
