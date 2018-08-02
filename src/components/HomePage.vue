@@ -1,16 +1,31 @@
 <template>
   <div :class="$style.wrapper">
-    <div :class="$style.title">
-      title
+    <div :class="[$style.title, $style.titleColor]">
+      {{ title }}
+    </div>
+    <div :class="[$style.title, $style.titleColor]">
+      {{ secondTitle }}
+    </div>
+    <div :class="[$style.title, $style.titleColor]">
+      {{ thirdTitle }}
     </div>
   </div>
 </template>
 
 <script>
+import { camelCase, kebabCase, capitalize } from 'lodash';
 export default {
   name: 'HomePage',
-  props: {
-    msg: String
+  computed: {
+    title() {
+      return camelCase('main caption');
+    },
+    secondTitle() {
+      return kebabCase('second optional title');
+    },
+    thirdTitle() {
+      return capitalize('third optional title');
+    }
   }
 };
 </script>
@@ -20,8 +35,10 @@ export default {
   margin: 2rem 0;
 }
 .title {
-  text-transform: capitalize;
   font-weight: 700;
   font-size: 2rem;
+}
+.titleColor {
+  color: green;
 }
 </style>
