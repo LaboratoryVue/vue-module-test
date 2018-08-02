@@ -31,12 +31,18 @@ export default {
 </script>
 
 <style lang="scss" module>
+@import '../styles/index.scss';
 .wrapper {
   margin: 2rem 0;
 }
 .title {
   font-weight: 700;
-  font-size: 2rem;
+  @include mq($until: smartphone) {
+    font-size: 1.6rem;
+  }
+  @include mq($from: smartphone) {
+    font-size: 2rem;
+  }
 }
 .titleColor {
   color: green;
